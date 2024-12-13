@@ -1,0 +1,149 @@
+/* We'll want to adjust these, but that will be part of the design process, so it's fine for now  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("./fonts/Segoe-UI-Variable-Static-Text.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("./fonts/Segoe-UI-Variable-Static-Text-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("./fonts/Segoe-UI-Variable-Static-Text-Semibold.ttf")
+    format("truetype");
+  font-weight: 600; /* Semibold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("./fonts/Segoe-UI-Variable-Static-Text-Light.ttf") format("truetype");
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("./fonts/DMMono-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+body {
+  @apply font-sans font-normal; /* Replaced 'font-geist' with 'font-sans' from Tailwind */
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+code {
+  font-family: "DM Mono", monospace; /* Set a fallback for monospace code blocks */
+  font-weight: 400;
+}
+
+@layer components {
+  .heading {
+    @apply mb-2 pt-3 pb-0 text-center leading-none tracking-tight text-blue-700 md:text-4xl lg:text-3xl dark:text-blue-700;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 600; /* Semibold for headings */
+  }
+  .column {
+    @apply px-3 py-3.5 text-left text-sm font-semibold text-gray-900;
+    font-family: "Segoe UI", sans-serif;
+  }
+}
+
+.popover {
+  background-color: white;
+  width: 500px;
+  padding: 9px;
+  border: 1px solid #ccc;
+  font-size: medium;
+  font-family: "Segoe UI", sans-serif;
+}
+.popover.bottom .arrow::after {
+  border-bottom-color: blueviolet;
+}
+.popover-content {
+  background-color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.2rem;
+  line-break: loose;
+  width: 180px;
+  padding: 10px;
+}
+
+.ͼ1 .cm-scroller {
+  font-family: "Segoe UI Mono", monospace;
+}
+
+/* Hide the scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar on Chrome, Safari, Edge */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Hide scrollbar on IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
+}
+
+.negative-letter-spacing {
+  letter-spacing: -1.6px;
+}
+
+.custom-toast {
+  background-color: #00310a;
+  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.custom-toast .Toastify__progress-bar {
+  background-color: #21b732;
+}
+
+.custom-toast-error {
+  background-color: #43030f;
+  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.custom-toast-error .Toastify__progress-bar {
+  background-color: #e1223b;
+}
+
+/* Customize the scrollbar */
+.miden-code-layout ::-webkit-scrollbar {
+  width: 8px; /* Adjust scrollbar width */
+}
+
+.miden-code-layout ::-webkit-scrollbar-thumb {
+  background-color: #44475a; /* Thumb color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.miden-code-layout ::-webkit-scrollbar-thumb:hover {
+  background-color: #6272a4; /* Thumb color on hover */
+}
+
+.miden-code-layout ::-webkit-scrollbar-track {
+  background-color: #141318; /* Track background color */
+  border-radius: 4px; /* Match thumb rounded corners */
+}
+
+/* For Firefox */
+.miden-code-layout {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #44475a #141318; /* Thumb and track colors */
+}
